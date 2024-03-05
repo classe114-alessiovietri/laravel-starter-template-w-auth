@@ -21,7 +21,7 @@ Route::get('/', [MainController::class, 'index'])->name('home');
 
 Route::prefix('admin')
     ->name('admin.')
-    ->middleware(['auth', 'verified'])
+    ->middleware('auth')
     ->group(function () {
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
