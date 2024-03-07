@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
         @vite('resources/js/app.js')
@@ -22,7 +22,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             @auth
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Link 2</a>
